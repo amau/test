@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+<link rel="stylesheet" type="text/css" href="examples.css" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="vendors/jquery.easings.min.js"></script>
+<script type="text/javascript" src="vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript" src="jquery.fullPage.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+	 
+	 	sectionsColor:['#f2f2f2','#4BBFC3','#7BAABE','whitesmoke'],
+	 	menu: '#menu',
+	 	anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+	 	
+	 	css3: true,
+
+        lockAnchors: false,
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['firstSlide', 'secondSlide'],
+        showActiveTooltip: false,
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
+        
+        controlArrows: true,
+        verticalCentered: true,
+        paddingTop: '3em',
+        paddingBottom: '10px',
+        fixedElements: '#header, .footer',
+        responsiveWidth: 0,
+        responsiveHeight: 0,
+        
+        sectionSelector: '.section',
+        slideSelector: '.slide',
+           
+	    }
+    );
+});
+</script>
+
+<style type＝"text/css">
+	.section {
+	text-align: center;
+	}
+</style>
+
+</head>
+
+<body>
+<ul id="menu">
+    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First section</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
+    <li data-menuanchor="thirdPage"><a href="#thirdPage">Third section</a></li>
+    <li data-menuanchor="fourthPage"><a href="#fourthPage">Fourth section</a></li>
+</ul>
+	
+	<div id="fullpage">
+
+    <div class="section" id="section0"><h1>Information Desgin</h1><p>SD3025</p></div>
+
+    <div class="section" id="section1">
+        <div class="slide"><p> Slide 1 </p></div>
+		<div class="slide"><p> Slide 2 </p></div>
+		<div class="slide"><p> Slide 3 </p></div>
+		<div class="slide"><p> Slide 4 </p></div>
+	</div>
+    
+    <div class="section" id="section2"><p>Section3</p></div>
+    
+    <div class="section" id="section3"><p>Section4</p></div>
+
+</div>
+</body>
+	
+</html>

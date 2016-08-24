@@ -1,0 +1,159 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+<link rel="stylesheet" type="text/css" href="examples.css" />
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="vendors/jquery.easings.min.js"></script>
+<script type="text/javascript" src="vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript" src="jquery.fullPage.js"></script>
+
+<script type="text/javascript" src="libraries/p5.js"></script>
+<script type="text/javascript" src="libraries/p5.dom.js"></script>
+<script type="text/javascript" src="libraries/p5.sound.js"></script>
+
+<script type="text/javascript" src="01.js"></script>
+<script type="text/javascript" src="02.js"></script>
+<script type="text/javascript" src="03.js"></script>
+
+	
+	<script type="text/javascript">
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+	 
+	 	sectionsColor:['#f2f2f2','#4BBFC3','#7BAABE','whitesmoke'],
+	 	menu: '#menu',
+	 	anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+	 	
+	 	css3: true,
+
+        lockAnchors: false,
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['firstSlide', 'secondSlide'],
+        showActiveTooltip: false,
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
+        
+        controlArrows: true,
+        verticalCentered: true,
+        paddingTop: '0px',
+        paddingBottom: '0px',
+        fixedElements: '#header, .footer',
+        responsiveWidth: 0,
+        responsiveHeight: 0,
+        
+        sectionSelector: '.section',
+        slideSelector: '.slide',
+           
+	    }
+    );
+});
+</script>
+
+	
+	<!-- this line removes any default padding and style. you might only need one of these values set. -->
+<style type＝"text/css">
+	h1{
+		font-family: 'Titillium Web', sans-serif;
+	}
+	p{
+		font-family: 'Titillium Web', sans-serif;
+	}
+	.section{
+		background-size: cover;
+	}
+	
+	#section2{
+		background-image: url(clive.jpg);
+	}
+
+	.section {
+	text-align: center;
+	}
+	
+	＃section2.js{
+	z-index: !important;	
+	}
+	#section0 .layer{
+		position: absolute;
+		z-index: 4	;
+		width: 100%;
+		left: 0;
+		top: 100px;
+	}
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:1;
+	}
+		/* Layer with position absolute in order to have it over the video
+	* (and hide the video navigation controls on mouse move)
+	* --------------------------------------- */
+	#section0 .layer{
+		position: absolute;
+		z-index: 4	;
+		width: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section0{
+		overflow: hidden;
+	}
+</style>
+
+
+</head>
+<body>
+	<ul id="menu">
+    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Welcome</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">Image</a></li>
+    <li data-menuanchor="thirdPage"><a href="#thirdPage">Bouncing</a></li>
+    <li data-menuanchor="fourthPage"><a href="#fourthPage">Bubbles</a></li>
+</ul>
+	
+		<div id="fullpage">
+    <div class="section" id="section0">
+    <video autoplay loop muted controls="false" id="myVideo">
+			<source src="sea.mp4" type="video/mp4">
+		</video>
+		<div class="slide">
+			<h1>Digital Aesthetic</h1><p>SD3762</p>
+		</div>
+	</div>
+
+
+    <div class="section" id="section1">
+        <div class="slide"><div id="c1"></div></div>
+		<div class="slide"><p> Slide 2 </p></div>
+		<div class="slide"><p> Slide 3 </p></div>
+		<div class="slide"><p> Slide 4 </p></div>
+	</div>
+    
+    <div class="section" id="section2"><div id="c2"></div></div>    
+    <div class="section" id="section3"><div id="c3"></div></div>
+
+</div>
+	
+</body>
+</html>
